@@ -33,17 +33,30 @@ grades_api/
 ├── student_grades.sql
 ├── test_grades_api.py
 ├── requirements.txt
-└── .env
+├── README.md
+└── .gitignore
 ```
+
+The `.env` file must be created locally. It is excluded from Git for security reasons.
 
 ## Installation
 
-Clone the repository and open the project directory.
+Clone the repository:
 
-Create and activate a virtual environment:
+```powershell
+git clone https://github.com/stylerok/student-grades-api.git
+cd student-grades-api
+```
+
+Create a virtual environment:
 
 ```powershell
 python -m venv .venv
+```
+
+Activate the virtual environment:
+
+```powershell
 .venv\Scripts\Activate.ps1
 ```
 
@@ -68,6 +81,8 @@ DATABASE_URL=postgresql+psycopg2://postgres:YOUR_PASSWORD@localhost:5432/school
 Replace `YOUR_PASSWORD` with your PostgreSQL password.
 
 ## Run the API
+
+Start the development server:
 
 ```powershell
 uvicorn main:app --reload
@@ -102,6 +117,8 @@ API documentation:
 | GET | `/reports/course-averages` | Course average grades |
 
 ## Run Tests
+
+Run the acceptance tests:
 
 ```powershell
 pytest -v test_grades_api.py
