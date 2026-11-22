@@ -391,7 +391,8 @@ def update_grade(
             detail="Grade not found",
         )
 
-    grade.grade = payload.grade
+    if payload.grade is not None:
+        grade.grade = payload.grade
 
     db.commit()
     db.refresh(grade)

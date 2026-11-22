@@ -22,6 +22,10 @@ REST API for managing students, courses, and academic grades.
 - Paginate student and course lists
 - Calculate average grades for students and courses
 
+## Keeping Old Data
+
+For a real school, deleting student records is not a good idea. I'd archive students when they leave instead of removing their records. I'd also keep courses that already have grades and mark them as inactive instead of deleting them.
+
 ## Project Structure
 
 ```text
@@ -85,7 +89,7 @@ Replace `YOUR_PASSWORD` with your PostgreSQL password.
 Start the development server:
 
 ```powershell
-uvicorn main:app --reload
+fastapi dev main.py
 ```
 
 API documentation:
@@ -126,4 +130,4 @@ pytest -v test_grades_api.py
 
 The acceptance test suite verifies API functionality, validation, error handling, database operations, and reports.
 
-**Test result:** 36 passed.
+**Latest test result:** 36 passed.

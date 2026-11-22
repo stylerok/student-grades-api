@@ -11,8 +11,8 @@ class StudentCreate(BaseModel):
 
 
 class StudentUpdate(BaseModel):
-    full_name: str | None = None
-    email: EmailStr | None = None
+    full_name: str = None
+    email: EmailStr = None
     birth_date: date | None = None
 
 
@@ -33,9 +33,9 @@ class CourseCreate(BaseModel):
 
 
 class CourseUpdate(BaseModel):
-    course_name: str | None = None
-    instructor_name: str | None = None
-    credits: int | None = Field(default=None, gt=0)
+    course_name: str = None
+    instructor_name: str = None
+    credits: int = Field(default=None, gt=0)
 
 
 class CourseOut(BaseModel):
@@ -54,7 +54,7 @@ class GradeCreate(BaseModel):
 
 
 class GradeUpdate(BaseModel):
-    grade: Decimal = Field(ge=0, le=100)
+    grade: Decimal = Field(default=None, ge=0, le=100)
 
 
 class GradeOut(BaseModel):
